@@ -1,0 +1,8 @@
+# trash files
+*.log
+*.swp
+*.un~
+.DS_Store
+build*
+node_modules
+npm-debug.log
