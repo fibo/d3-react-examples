@@ -5,7 +5,9 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "browserify_line-chart-01": "cross-env NODE_ENV=production browserify src/line-chart-01/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | uglifyjs --compress --mangle > docs/line-chart-01/bundle.js",
+    "browserify_bar-chart-01": "cross-env NODE_ENV=production browserify src/bar-chart-01/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bar-chart-01/bundle.js",
+    "browserify_line-chart-01": "cross-env NODE_ENV=production browserify src/line-chart-01/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/line-chart-01/bundle.js",
+    "example_bar-chart-01": "rimraf docs/bar-chart-01/bundle.js; budo src/bar-chart-01/index.js --dir docs/bar-chart-01 --open --live --serve bundle.js -- -t babelify -x react -x react-dom",
     "example_line-chart-01": "rimraf docs/line-chart-01/bundle.js; budo src/line-chart-01/index.js --dir docs/line-chart-01 --open --live --serve bundle.js -- -t babelify -x react -x react-dom",
     "lint": "standardx",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -49,6 +51,7 @@
   "dependencies": {
     "d3-array": "^2.2.0",
     "d3-scale": "^3.0.0",
+    "d3-selection": "^1.4.0",
     "d3-shape": "^1.3.5"
   },
   "devDependencies": {
@@ -56,6 +59,6 @@
     "pre-commit": "^1.2.2",
     "rimraf": "^2.6.3",
     "standardx": "^3.0.1",
-    "zeroconf-redux": "^4.9.0"
+    "zeroconf-redux": "^5.0.0"
   }
 }
