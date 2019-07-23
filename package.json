@@ -7,9 +7,11 @@
   "scripts": {
     "browserify_animation-001": "cross-env NODE_ENV=production browserify docs/animation-001/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/animation-001/bundle.js",
     "browserify_bar-chart-01": "cross-env NODE_ENV=production browserify docs/bar-chart-01/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bar-chart-01/bundle.js",
+    "browserify_cloud-words-01": "cross-env NODE_ENV=production browserify docs/cloud-words-01/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/cloud-words-01/bundle.js",
     "browserify_line-chart-01": "cross-env NODE_ENV=production browserify docs/line-chart-01/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/line-chart-01/bundle.js",
     "example_animation-001": "rimraf docs/animation-001/bundle.js; budo docs/animation-001/index.js --dir docs/animation-001 --open --live --serve bundle.js -- -t babelify -x react -x react-dom",
     "example_bar-chart-01": "rimraf docs/bar-chart-01/bundle.js; budo docs/bar-chart-01/index.js --dir docs/bar-chart-01 --open --live --serve bundle.js -- -t babelify -x react -x react-dom",
+    "example_cloud-words-01": "rimraf docs/cloud-words-01/bundle.js; budo docs/cloud-words-01/index.js --dir docs/cloud-words-01 --open --live --serve bundle.js -- -t babelify -x react -x react-dom",
     "example_line-chart-01": "rimraf docs/line-chart-01/bundle.js; budo docs/line-chart-01/index.js --dir docs/line-chart-01 --open --live --serve bundle.js -- -t babelify -x react -x react-dom",
     "lint": "standardx",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -52,10 +54,12 @@
   "homepage": "http://g14n.info/d3-react-examples",
   "dependencies": {
     "d3-array": "^2.2.0",
+    "d3-cloud": "^1.2.5",
     "d3-scale": "^3.0.0",
     "d3-selection": "^1.4.0",
     "d3-shape": "^1.3.5",
-    "d3-transition": "^1.2.0"
+    "d3-transition": "^1.2.0",
+    "randomcolor": "^0.5.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
